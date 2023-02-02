@@ -6,36 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1></h1>
+    이번주 로또 번호는 : <h1></h1> <button>LOTTO</button>
 
     <script>
         const H1 = document.querySelector(`h1`);
-        // let LOTTO = [];
-        // for (i = 0; i < 6; i++) {
-        //     const num = Math.floor(Math.random() * 44 + 1)
-        //     LOTTO.push(num);
-        // }
+        const BTN = document.querySelector(`button`);
 
         let LOTTO = new Set();
-        // for (i = 0; i < 6; i++) {
-        //     const num = Math.floor(Math.random() * 44 + 1)
-        //     LOTTO.add(num)
-        // }
-        //     while (lotto.size < count) {
-        //     // 0~46이 아니라 실제 로또처럼 1~45가 나오게 끔 함.
-        //     lotto.add(Math.floor(Math.random() * (maxNumber - 1)) + 1);
-        // }
 
         while (LOTTO.size < 6) {
-            const num = Math.floor(Math.random() * 44 + 1)
+            const num = Math.floor(Math.random() * 45 + 1)
             LOTTO.add(num)
         }
-        console.log(LOTTO)
-        H1.innerHTML = LOTTO;
+        const LOTTO_SET = () => {
+            H1.innerHTML = [...LOTTO].sort((A, B) => A - B);
+        }
+
+        BTN.addEventListener('click', LOTTO_SET)
+
     </script>
 </body>
 
