@@ -22,7 +22,7 @@
         const BGC = () => {
             const BG_COLOR = [];
             for (let i = 0; i < 3; i++) {
-                const n = Math.floor(Math.random() * 255 + 1);
+                const n = Math.floor(Math.random() * 255 + 1); //0~255
                 BG_COLOR.push(n);
                 BODY.style.background = `rgb(${BG_COLOR[0]},${BG_COLOR[1]},${BG_COLOR[2]})`;
             }
