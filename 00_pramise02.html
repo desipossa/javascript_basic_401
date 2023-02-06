@@ -14,15 +14,15 @@
         //step01.5 콜백함수의 이용.
 
         const H1 = document.querySelector('h1');
-        const a = 1;
-        const textHandler = () => {
-            const H1Handler = () => {
-                console.log(a);
-            }
-            H1Handler();
+
+        const a = 4;
+        const H1Handler = x => setTimeout(() => console.log(x), 3000);
+        const textHandler = (cb) => {
+            cb();
+            //const textHandler2 = b => setTimeout(() => console.log(b), 3000);
 
         }
-        setTimeout(textHandler, 3000);
+        textHandler(() => H1Handler(a));
 
 
 
